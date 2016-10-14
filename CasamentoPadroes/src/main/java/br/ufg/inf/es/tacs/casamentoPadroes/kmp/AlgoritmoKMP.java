@@ -14,7 +14,7 @@ public class AlgoritmoKMP {
      * KMP (Knuth-Morris-Pratt).
      *
      * @param padrao Padrão a ser procurado.
-     * @param texto Texto a se procurar o padrão.
+     * @param texto Texto a se procurar pelo padrão.
      * @return Posição no texto onde o padrão acontece pela primeira vez ou -1
      * caso o padrão não ocorra no texto.
      */
