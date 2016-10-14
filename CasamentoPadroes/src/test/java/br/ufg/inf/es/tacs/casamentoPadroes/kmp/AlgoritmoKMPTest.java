@@ -38,7 +38,7 @@ public class AlgoritmoKMPTest {
 
     @org.junit.Test
     public void testIndexOfSucesso() {
-        int result = AlgoritmoKMP.indiceDe("abacab", "abacaabaccabacabaabb");
+        int result = AlgoritmoKMP.indiceDe("abacabab", "abacaabaccabacabaabb");
         assertEquals(10, result);
     }
 

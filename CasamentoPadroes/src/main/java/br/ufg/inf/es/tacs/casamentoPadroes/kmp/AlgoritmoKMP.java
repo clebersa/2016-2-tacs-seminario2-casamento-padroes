@@ -22,7 +22,7 @@ public class AlgoritmoKMP {
         // Esta verificação condicional não está originalmente no algoritmo, mas 
         // foi inserida aqui para tratar os casos onde o padrão é nulo ou vazio.
         if (padrao != null && padrao.length() > 0) {
-            int[] arrayFalha = gerarArrayDeFalha(padrao);
+            int[] arraySufixo = gerarArraySufixo(padrao);
             int indiceTexto = 0;
             int indicePadrao = 0;
             int contadorComparacoes = 0;
@@ -36,7 +36,7 @@ public class AlgoritmoKMP {
                         indicePadrao = indicePadrao + 1;
                     }
                 } else if (indicePadrao > 0) {
-                    indicePadrao = arrayFalha[indicePadrao - 1];
+                    indicePadrao = arraySufixo[indicePadrao - 1];
                 } else {
                     indiceTexto = indiceTexto + 1;
                 }
@@ -45,25 +45,25 @@ public class AlgoritmoKMP {
         return -1;
     }
 
-    private static int[] gerarArrayDeFalha(String padrao) {
-        int[] arrayFalha = new int[padrao.length()];
-        arrayFalha[0] = 0;
-        int indiceArrayFalha = 1;
+    private static int[] gerarArraySufixo(String padrao) {
+        int[] arraySufixo = new int[padrao.length()];
+        arraySufixo[0] = 0;
+        int indiceArraySufixo = 1;
         int indicePadrao = 0;
-        while (indiceArrayFalha < padrao.length()) {
-            if (padrao.charAt(indiceArrayFalha) == padrao.charAt(indicePadrao)) {
-                arrayFalha[indiceArrayFalha] = indicePadrao + 1;
-                indiceArrayFalha = indiceArrayFalha + 1;
+        while (indiceArraySufixo < padrao.length()) {
+            if (padrao.charAt(indiceArraySufixo) == padrao.charAt(indicePadrao)) {
+                arraySufixo[indiceArraySufixo] = indicePadrao + 1;
+                indiceArraySufixo = indiceArraySufixo + 1;
                 indicePadrao = indicePadrao + 1;
             } else if (indicePadrao > 0) {
-                indicePadrao = arrayFalha[indicePadrao - 1];
+                indicePadrao = arraySufixo[indicePadrao - 1];
             } else {
-                arrayFalha[indiceArrayFalha] = 0;
-                indiceArrayFalha = indiceArrayFalha + 1;
+                arraySufixo[indiceArraySufixo] = 0;
+                indiceArraySufixo = indiceArraySufixo + 1;
             }
         }
-        System.out.println("Array de falha para padrão '" + padrao + "': "
-                + Arrays.toString(arrayFalha));
-        return arrayFalha;
+        System.out.println("Array de sufixo para padrão '" + padrao + "': "
+                + Arrays.toString(arraySufixo));
+        return arraySufixo;
     }
 }
