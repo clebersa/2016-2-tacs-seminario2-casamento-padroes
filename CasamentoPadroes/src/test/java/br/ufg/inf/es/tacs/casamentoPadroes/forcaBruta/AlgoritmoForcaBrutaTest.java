@@ -1,5 +1,6 @@
-package br.ufg.inf.es.tacs.casamentoPadroes.kmp;
+package br.ufg.inf.es.tacs.casamentoPadroes.forcaBruta;
 
+import br.ufg.inf.es.tacs.casamentoPadroes.kmp.AlgoritmoKMP;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -7,39 +8,39 @@ import static org.junit.Assert.*;
  *
  * @author cleber
  */
-public class AlgoritmoKMPTest {
-
-    public AlgoritmoKMPTest() {
+public class AlgoritmoForcaBrutaTest {
+    
+    public AlgoritmoForcaBrutaTest() {
     }
 
     @org.junit.Test
     public void testIndexOfPadraoVazio() {
-        int result = AlgoritmoKMP.indiceDe("", "abacaabaccabacabaabb");
+        int result = AlgoritmoForcaBruta.indiceDe("", "abacaabaccabacabaabb");
         assertEquals(-1, result);
     }
 
     @org.junit.Test
     public void testIndexOfTextoVazio() {
-        int result = AlgoritmoKMP.indiceDe("abacab", "");
+        int result = AlgoritmoForcaBruta.indiceDe("abacab", "");
         assertEquals(-1, result);
     }
 
     @org.junit.Test
     public void testIndexOfPadraoMaiorQueTexto() {
-        int result = AlgoritmoKMP.indiceDe("abacaabaccabacabaabb", "abacab");
+        int result = AlgoritmoForcaBruta.indiceDe("abacaabaccabacabaabb", "abacab");
         assertEquals(-1, result);
     }
 
     @org.junit.Test
     public void testIndexOfFalha() {
-        int result = AlgoritmoKMP.indiceDe("abc", "abacaabaccabacabaabb");
+        int result = AlgoritmoForcaBruta.indiceDe("abc", "abacaabaccabacabaabb");
         assertEquals(-1, result);
     }
 
     @org.junit.Test
     public void testIndexOfSucesso() {
-        int result = AlgoritmoKMP.indiceDe("abacabab", "abacaabaccabacababb");
+        int result = AlgoritmoForcaBruta.indiceDe("abacabab", "abacaabaccabacababb");
         assertEquals(10, result);
     }
-
+    
 }

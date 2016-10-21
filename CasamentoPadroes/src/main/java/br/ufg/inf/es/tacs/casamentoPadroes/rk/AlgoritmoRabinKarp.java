@@ -17,7 +17,13 @@ public class AlgoritmoRabinKarp {
                 return i;
             }
         }
-        return false;
+        //TODO: Kaique deve confirmar que o retorno para a função é -1 nesse caso.
+        return -1;
+    }
+    
+    //TODO: Kaique deve especificar como essa função funciona.
+    private long hash(String pat, int M){
+        return 0;
     }
 
 }

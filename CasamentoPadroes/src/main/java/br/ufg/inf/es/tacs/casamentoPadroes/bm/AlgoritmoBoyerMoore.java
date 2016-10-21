@@ -7,6 +7,9 @@ package br.ufg.inf.es.tacs.casamentoPadroes.bm;
 public class AlgoritmoBoyerMoore {
 
     public static void bm(String txt, int n, String padrao, int m) {
+        //TODO: Kaique deve definir maxChar corretamente
+        int maxChar = padrao.length();
+        
         int d[] = new int[maxChar];
         for (int j = 0; j < maxChar; j++) {
             d[j] = m;
