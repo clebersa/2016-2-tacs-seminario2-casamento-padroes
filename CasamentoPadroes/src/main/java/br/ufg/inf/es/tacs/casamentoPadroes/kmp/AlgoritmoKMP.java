@@ -62,8 +62,6 @@ public class AlgoritmoKMP {
                 indiceArraySufixo = indiceArraySufixo + 1;
             }
         }
-        System.out.println("Array de sufixo para padrão '" + padrao + "': "
-                + Arrays.toString(arraySufixo));
         return arraySufixo;
     }
 }

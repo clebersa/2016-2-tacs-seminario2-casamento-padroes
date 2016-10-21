@@ -1,7 +1,5 @@
 package br.ufg.inf.es.tacs.casamentoPadroes.forcaBruta;
 
-import br.ufg.inf.es.tacs.casamentoPadroes.kmp.AlgoritmoKMP;
-import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
